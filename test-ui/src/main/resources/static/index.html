@@ -3,30 +3,57 @@
 
 <head>
 
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
-<meta charset="UTF-8">
+	<meta charset="UTF-8"/>
 
-<title>Test Full Stack</title>
+	<title>Test Full Stack</title>
 
-<link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/css/app.css" />
+	<link rel="stylesheet" href="./vendors/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/app.css" />
 
 </head>
 
-<body>
+<body ng-cloak ng-init="users=[
+                        {id:'1', nome:'Cleber', email:'cleber@gmail.com', telefone:'11983419065', sexo:'M'}, 
+                        {id:'2', nome:'Camila', email:'cahmartini@hotmail.com', telefone:'11984510707', sexo:'F'}]">
+	<div>
 
-	<div ui-view></div>
+		<div ui-view ng-hide="isHidden">
+			User Id : <input type="text" ng-model="userFilter"/> {{name}}
+		</div>
 
-	<script src="/vendors/jquery/jquery-3.1.1.min.js"></script>
-	<script src="/vendors/bootstrap/bootstrap.min.js"></script>
-	<script src="/vendors/angular/angular.min.js"></script>
-	<script src="/vendors/angular/angular-ui-router.min.js"></script>
+	</div>    
+	<!--Hide: <input type="checkbox" ng-model="isHidden"/> -->
 
-	<script src="/app/app.js"></script>
-	<script src="/app/app-controller.js"></script>
-	<script src="/app/app-route.js"></script>
+    <div>
+        <table> 
+            <tr >
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Sexo</th>
+            </tr>            
+            <tr ng-repeat="user in users | filter:userFilter" >
+                <td>{{user.id}}</td>
+                <td>{{user.nome}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.telefone}}</td>
+                <td>{{user.sexo}}</td>
+            </tr>
+            
+        </table>
+    </div>
+    
+	<script src="./vendors/jquery/jquery-3.1.1.min.js"></script>
+	<script src="./vendors/bootstrap/bootstrap.min.js"></script>
+	<script src="./vendors/angular/angular.min.js"></script>
+	<script src="./vendors/angular/angular-ui-router.min.js"></script>
+
+	<script src="./app/app.js"></script>
+	<script src="./app/app-controller.js"></script>
+	<script src="./app/app-route.js"></script>
 
 </body>
 

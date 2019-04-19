@@ -3,6 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>test-main</artifactId>
 	<name>Test Full Stack Main</name>
+	
 	<parent>
 		<groupId>com.test</groupId>
 		<artifactId>test</artifactId>
@@ -17,6 +18,13 @@
 			<artifactId>test-ui</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.test</groupId>
+			<artifactId>test-config</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 		
 		<dependency>
 			<groupId>com.test</groupId>
